@@ -1,0 +1,270 @@
+
+Java_Assignment_3 - Due Mon. Aug 11 - GitHub 
+  Looking for 15 points in total
+  balance game - average around 10 turns (0 points - required)
+  print statements - make them pretty (0 pts - required)
+    3 pts each
+    ***  add colour
+    ***  add a 4th warrior or weapon class (only 1 time for 3 pts)
+      add background music
+    5 pts each
+    ***  add an element - like weather or arena
+        must have package, parent class, 2 sub-classes and stats that affect the game
+    ***  add a magic ability or special Attack 
+        use 1 time in the game or has a timer
+    ***  add colour commentator (play by play) 
+        "orc fiercely hit for 99 damage and growls"
+        "elf swings mightely and misses"
+    8 pts each
+      implement game safe/restore (using file i/o) with continue the game
+      add another level of inheritance to package to all 3 warriors/weapons
+        warrior would still be a parent 
+          human child of warrior but also a parent
+            munk or barbarian child of human
+    15 pts each
+    ***  retheme the entire game, rename everything making it a different subject
+      rewrite whole game from scratch
+      change game entirely (adventure game, grid battle like battleship, horse racing)
+
+
+
+
+
+Game Name: Dewdrop Defenders
+
+Tagline: "Go forth, Defender! Be-leaf in yourself!"
+
+**DEFENDERS**
+
+Petal Knight - balanced like a human
+  special ability: Petalstorm
+        Two quick strikes at 70% accuracy each
+        “With a whirl of petals, you strike twice with elegance and fury.”
+    Weapon: Bloomblade
+      base damage 45
+      accuracy 80%
+      dexterity cost 50
+        “A sturdy sword, its edge laced with petals and purpose.”
+  base health 210
+  bonus health 35
+  base strength 75
+  bonus strength 40
+  base dexterity 60
+  bonus dexterity 45
+
+Thorn Ranger - agile like an elf
+  special ability - Needlehail
+        High-accuracy barrage 
+        “You unleash a thorny hailstorm, peppering the enemy from all angles.”
+    Weapon: Bramblebite
+      base damage 35
+      accuracy 90%
+      dexterity cost 80
+        “Woven from wildwood and barbs—swift and stinging.”
+  base health 170
+  bonus health 25
+  base strength 55
+  bonus strength 20
+  base dexterity 160
+  bonus dexterity 60
+
+Moss Guardian - tanky like an orc
+  special ability - Rootwall
+          Absorbs next enemy attack, then heals 25 HP
+          “Roots surge from the earth to shield your form and mend your wounds.”
+    Weapon: Rootspike
+      base damage 60
+      accuracy 60%
+      dexterity cost 30
+        “A brutal chunk of ironwood — more club than blade.”
+  base health 360
+  bonus health 60
+  base strength 115
+  bonus strength 50
+  base dexterity 15
+  bonus dexterity 15
+
+Dandelight Mystic - caster
+  special ability - Sporeshift
+          Restores 20 HP and deals 10 magic damage to enemy
+          “Glowing spores drift through the air, soothing you and stinging your foe.”
+    Weapon: Sporespell
+      base damage 25
+      accuracy 85%
+      dexterity cost 70
+        “A glowing staff seeded with spores of healing and harm.”
+  base health 150
+  bonus health 20
+  base strength 40
+  bonus strength 25
+  base dexterity 100
+  bonus dexterity 50
+
+**HOLLOWBORN**
+
+Sludgling - Goo | tanky goo
+   Attack: Gloop Slam - base damage 20
+     “It lurches forward and slaps you with a wet, jelly-sounding thud.”
+  health 120
+  strength 35
+  dexterity 15
+
+Glimmoth - flying | fragile darty moth
+    Attack: Glimmersting - base damage 15
+      “A flash of light—then a darting strike to your side!”
+  health 60
+  strength 20
+  dexterity 100
+
+Shadowisp - spirit | dodgy ghost
+    Attack: Phantom Lurch - base damage 10
+      “It vanishes—then reappears behind you with a ghostly jab.”
+  health 40
+  strength 15
+  dexterty 120
+
+Thistlebeast - plant | heavy hitter with a thorny temper
+    Attack: Spinecrash - base damage 30
+      “It slams into you with its full weight, a tangle of vines and vengeance.”
+  health 90
+  strength 80
+  dexterity 25
+
+** ARMOUR **
+
+Leafweave Vest - light amour 
+  protection: 15
+  dexterity cost 10
+    “Woven from tightly layered leaves and barkcloth. Whisper-light, but barely more than a breeze’s worth of defense.”
+
+Thornbound Jerkin - medium armour 
+  protection: 30
+  dexterity cost: 35
+    “Reinforced with thorny vines and hardened sap. A balance of movement and might.”
+
+Mossplate Mantle - heavy armour 
+  protection: 50
+  dexterity cost: 65
+    “Slabs of living moss and stonewood bark. You’ll feel every step—but so will your enemies.”
+
+** WEATHER **
+
+Package: Environment
+Parent Class: Weather 
+Subclasses: Sunshine, Fog
+
+Sunshine:
+  Effect: +10% accuracy for all attacks
+    “The sun shines warmly over the valley. Everything feels a little clearer.”
+
+Fog:
+  Effect: -15% accuracy for all attacks
+    “A thick fog creeps across the battlefield. It’s hard to see your enemy…”
+
+*** PRINTS ***
+Character Descriptors:
+Petal Knight - “A steadfast guardian trained in honor and horticulture.”
+Thorn Ranger - “Swift as the wind and sharp as a bramble’s bite.”
+Moss Guardian - “Rooted in resilience, unmoved by even the fiercest storm.”
+Dandelight Mystic - “A gentle spirit channeling ancient magic through flora and light.”
+
+Sludgling - “A sticky spawn of decay—slow, but stubborn.”
+Glimmoth - “Drawn to light and life. Glimmoths shimmer—then strike.”
+Shadowisp - “A flickering shadow, dancing between strikes and silence.”
+Thistlebeast - “All rage and thorns, a bramble brought to life.”
+
+
+
+*********************************
+~~~ Choose Your Defender! ~~~
+*********************************
+
+1) Petal Knight  – Balanced stats
+2) Thorn Ranger  – Agile sharpshooter
+3) Moss Guardian  – Tanky wall
+4) Dandelight Mystic  – Support caster
+
+
+*********************************
+~~~~~~ Gear Up! ~~~~~~
+*********************************
+
+1) Leafweave Vest – Light armor
+2) Thornbound Jerkin  – Medium armor
+3) Mossplate Mantle  – Heavy armor
+
+Enter a number between 1 and 3:
+
+
+*********************************
+~~~~ Make Your Move! ~~~~
+*********************************
+
+1) Normal Attack
+2) Heavy Attack
+3) Use Special Ability (unlocked below 25% HP)
+
+
+*********************************
+~~~~~ Victory Blooms! ~~~~~
+*********************************
+
+You’ve defeated the Hollowborn  
+and peace returns to the valley. 
+
+The flowers will remember your courage.
+
+
+*********************************
+~~~~~ The Hollowborn Rise ~~~~~
+*********************************
+
+Your strength has faded...  
+and the valley trembles in your absence. 
+
+But hope takes root even in defeat.
+Try again, Defender.
+
+
+
+*********************************
+~~~ Dewdrop Defender Ready! ~~~
+*********************************
+
+Class: Petal Knight
+Armour: Thornbound Jerkin
+Weapon: Bloomblade
+
+Health:    212
+Strength:  104
+Dexterity:  72
+
+“A steadfast guardian trained in honor and horticulture.”
+
+*********************************
+~~~ The Hollowborn Approaches ~~~
+*********************************
+
+Type: Glimmoth
+Armour: Leafweave Vest
+Attack: Glimmersting
+
+Health:     60
+Strength:   20
+Dexterity: 100
+
+“Drawn to light and life. Glimmoths shimmer—then strike.”
+
+
+Special ability descriptors:
+  Petal Knight - You whirl into motion, petals swirling in your wake.
+The Bloomblade flashes—twice in quick succession!
+
+  Thorn Ranger - You draw back the Bramblebite and unleash a storm of thorns.
+Arrows rain down like wild magic!
+
+  Moss Guardian - You slam your Rootspike into the ground.
+Ancient roots rise to protect and mend you.
+
+  Dandelight Mystic - You whisper to the spores—glowing, drifting, alive.
+A pulse of magic heals you… and stings your foe.
