@@ -1,18 +1,16 @@
-package hollowborn;
+package defender;
 
 import java.util.Random;
-import defender.*;
 
-public abstract class Hollowborn {
+public abstract class Defender {
   private String archetype;
   private int health;
   private int strength;
   private int accuracy;
-  private String attack;
 
   protected Random rng = new Random();
 
-  public Hollowborn(String archetype) {
+  public Defender(String archetype) {
     this.archetype = archetype;
   } // close constructor
 
@@ -28,9 +26,6 @@ public abstract class Hollowborn {
   public int getStrength() {
     return this.strength;
   }
-  public String getAttack() {
-    return this.attack;
-  }
   public int getAccuracy() {
     return this.accuracy;
   } // getters closed 
@@ -44,9 +39,6 @@ public abstract class Hollowborn {
   public void setStrength(int strength) {
     this.strength = strength;
   }
-  public void setAttack(String attack) {
-    this.attack = attack;
-  }
   public void setAccuracy(int accuracy) {
     this.accuracy = accuracy;
   } // setters closed
@@ -57,8 +49,7 @@ public abstract class Hollowborn {
   public void heal(float healAmount) {
     this.health += healAmount;
   }
-  
-  public abstract void getAttackName(Defender player, Random rng);
-    // each archetype has their own attack
+  public abstract void useSpecialAbility(Hollowborn enemy, Random rng);
+    // each archetype has their own ability
 
  } // close class
