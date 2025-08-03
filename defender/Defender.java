@@ -1,6 +1,7 @@
 package defender;
 
 import java.util.Random;
+import hollowborn.*;
 
 public abstract class Defender {
   private String archetype;

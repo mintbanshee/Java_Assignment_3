@@ -1,6 +1,7 @@
 package defender;
 
 import java.util.Random;
+import hollowborn.*;
 
 public class MossGuardian extends Defender {
   private int baseHealth = 210;

@@ -1,6 +1,7 @@
 package defender;
 
 import java.util.Random;
+import hollowborn.*;
 
 public class Dandelight extends Defender {
   private int baseHealth = 210;
