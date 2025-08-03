@@ -21,7 +21,7 @@ public class Glimmoth extends Hollowborn {
   } // close constructor
 
   @Override
-  public void getAttackName(Defender player, Random rng) {
+  public float getAttackName(Defender player, Random rng) {
     // TODO Auto-generated method stub
 
     float damageTaken = 15;
@@ -31,9 +31,11 @@ public class Glimmoth extends Hollowborn {
       System.out.println("Glimmoth bursts in a radiant flare, dazzling your senses with eerie brilliance!");
       player.reduceHealth(damageTaken);
       System.out.printf("You have taken %.0f damage!%n", damageTaken);
+      return damageTaken;
     }  
       else {
         System.out.println("A shimmer flickers weakly before fading into the mist. Your foe's attack missed.");
+        return 0;
       }
   } // close Glimmersting
 

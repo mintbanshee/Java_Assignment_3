@@ -58,7 +58,7 @@ public abstract class Hollowborn {
     this.health += healAmount;
   }
   
-  public abstract void getAttackName(Defender player, Random rng);
+  public abstract float getAttackName(Defender player, Random rng);
     // each archetype has their own attack
 
  } // close class

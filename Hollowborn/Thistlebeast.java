@@ -21,7 +21,7 @@ public class Thistlebeast extends Hollowborn {
   } // close constructor
 
   @Override
-  public void getAttackName(Defender player, Random rng) {
+  public float getAttackName(Defender player, Random rng) {
     // TODO Auto-generated method stub
 
     float damageTaken = 35;
@@ -31,9 +31,11 @@ public class Thistlebeast extends Hollowborn {
       System.out.println("Thistlebeast slams down its thorny bulk, crushing everything beneath with a groaning roar of splintered earth!");
       player.reduceHealth(damageTaken);
       System.out.printf("You have taken %.0f damage!%n", damageTaken);
+      return damageTaken;
     }  
       else {
         System.out.println("Thistlebeast lunges, but its massive limbs crash into the dirt—missing their mark as the thorns rustle in frustration.");
+        return 0;
       }
   } // close Briarcrush
 

@@ -21,7 +21,7 @@ public class Sludgling extends Hollowborn {
   } // close constructor
 
   @Override
-  public void getAttackName(Defender player, Random rng) {
+  public float getAttackName(Defender player, Random rng) {
     // TODO Auto-generated method stub
 
     float damageTaken = 20;
@@ -31,9 +31,11 @@ public class Sludgling extends Hollowborn {
       System.out.println("A whipping tendril of muck lashes out, flinging bile and decay in its wake!");
       player.reduceHealth(damageTaken);
       System.out.printf("You have taken %.0f damage!%n", damageTaken);
+      return damageTaken;
     }  
       else {
         System.out.println("Tendrils of muck start to flail and fall to the ground. Your foe's attack failed.");
+        return 0;
       }
   } // close Mirelash
 

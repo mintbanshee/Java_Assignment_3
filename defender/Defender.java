@@ -2,18 +2,23 @@ package defender;
 
 import java.util.Random;
 import hollowborn.*;
+import armour.*;
 
 public abstract class Defender {
   private String archetype;
   private int health;
   private int strength;
   private int accuracy;
+  private Armour armour;
+
 
   protected Random rng = new Random();
 
   public Defender(String archetype) {
     this.archetype = archetype;
   } // close constructor
+
+
 
   public String getArchetype() {
     return this.archetype;
@@ -29,6 +34,9 @@ public abstract class Defender {
   }
   public int getAccuracy() {
     return this.accuracy;
+  }
+  public Armour getArmour() {
+    return this.armour;
   } // getters closed 
 
   public void setArchetype(String archetype) {
@@ -42,6 +50,9 @@ public abstract class Defender {
   }
   public void setAccuracy(int accuracy) {
     this.accuracy = accuracy;
+  }
+  public void setArmour(Armour selectedArmour) {
+    this.armour = selectedArmour;
   } // setters closed
 
   public void reduceHealth(float damageTaken) {
@@ -53,4 +64,8 @@ public abstract class Defender {
   public abstract void useSpecialAbility(Hollowborn enemy, Random rng);
     // each archetype has their own ability
 
- } // close class
+  public int attack(Hollowborn enemy, Random rng) {
+    
+  }
+    
+} // close class
