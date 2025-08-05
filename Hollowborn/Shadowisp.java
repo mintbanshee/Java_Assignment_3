@@ -29,7 +29,6 @@ public class Shadowisp extends Hollowborn {
     // enemy attack - Whisperrend
     if (rng.nextInt(100) < 80) {
       System.out.println("A sharp whisper curls around you—cold and full of menace—as Shadowisp sinks through your guard!");
-      player.reduceHealth(damageTaken);
       System.out.printf("You have taken %.0f damage!%n", damageTaken);
       return damageTaken;
     }  

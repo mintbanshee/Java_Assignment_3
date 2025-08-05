@@ -29,7 +29,6 @@ public class Glimmoth extends Hollowborn {
     // enemy attack - Glimmersting
     if (rng.nextInt(100) < 85) {
       System.out.println("Glimmoth bursts in a radiant flare, dazzling your senses with eerie brilliance!");
-      player.reduceHealth(damageTaken);
       System.out.printf("You have taken %.0f damage!%n", damageTaken);
       return damageTaken;
     }  

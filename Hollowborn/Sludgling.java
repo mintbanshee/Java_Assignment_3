@@ -29,7 +29,6 @@ public class Sludgling extends Hollowborn {
     // enemy attack - Mirelash
     if (rng.nextInt(100) < 70) {
       System.out.println("A whipping tendril of muck lashes out, flinging bile and decay in its wake!");
-      player.reduceHealth(damageTaken);
       System.out.printf("You have taken %.0f damage!%n", damageTaken);
       return damageTaken;
     }  

@@ -29,7 +29,6 @@ public class Thistlebeast extends Hollowborn {
     // enemy attack - Briarcrush
     if (rng.nextInt(100) < 60) {
       System.out.println("Thistlebeast slams down its thorny bulk, crushing everything beneath with a groaning roar of splintered earth!");
-      player.reduceHealth(damageTaken);
       System.out.printf("You have taken %.0f damage!%n", damageTaken);
       return damageTaken;
     }  

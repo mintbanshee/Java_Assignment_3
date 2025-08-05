@@ -63,9 +63,5 @@ public abstract class Defender {
   }
   public abstract void useSpecialAbility(Hollowborn enemy, Random rng);
     // each archetype has their own ability
-
-  public int attack(Hollowborn enemy, Random rng) {
-    
-  }
     
 } // close class

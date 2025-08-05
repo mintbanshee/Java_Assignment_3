@@ -25,6 +25,7 @@ public class BeginQuest {
   private static int maxArmours = 3;
   private static int maxHollowborn = 4;
   private static int maxAttackOptions = 3;
+  private static boolean usedSpecial = false;
 
   private static Hollowborn[] enemies = {
     new Glimmoth(), new Sludgling(), new Shadowisp(), new Thistlebeast()
@@ -38,8 +39,22 @@ public class BeginQuest {
     /// Game Loop
     while(!gameOver) {
       if(isPlayerTurn) {
+        int attackType;
+        if(!usedSpecial && player.getHealth() <= 35) {
+          ink.specialAttackMenu();
+          attackType = validator.validateAttackChoice(3);
+
+          if(attackType == 3) {
+            player.useSpecialAbility(enemy, rng);
+            usedSpecial = true;
+            isPlayerTurn = false;
+            continue;
+          }
+        }
+        else {
         ink.attackMenu();
-        int attackType = validator.validateAttackChoice(maxAttackOptions);
+        attackType = validator.validateAttackChoice(2);
+        }
 
         damageTaken = weapon.strike(
           attackType, player.getStrength(), player.getAccuracy(), armour.getArmourAccuracyCost());
@@ -55,8 +70,6 @@ public class BeginQuest {
       damageTaken = 0;  
     }
     else {
-      int attackType = rng.nextInt(3) +1;
-
       damageTaken = enemy.getAttackName(player, rng);
 
     if(damageTaken > 0) {
