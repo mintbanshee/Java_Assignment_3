@@ -22,16 +22,16 @@ public class Ink {
 
   public Ink() {} 
 
-  public void Welcome() {
+  public void welcome() {
     System.out.println("*************************************");
     System.out.println("~~~ Welcome to Dewdrop Defenders! ~~~");
-    System.out.println("*************************************");
+    System.out.println("*************************************\n");
   } // close welcome
 
-   public void Goodbye() {
+   public void goodbye() {
     System.out.println("*************************************");
     System.out.println("~~~~~~ Thank you for playing! ~~~~~~");
-    System.out.println("*************************************");
+    System.out.println("*************************************\n");
   } // close goodbye
 
   public void printStats(Defender player, Weapon weapon, Armour armour, Hollowborn enemy) {
@@ -77,7 +77,7 @@ public class Ink {
     System.out.println("*************************************\n");
   }
 
-  public void attackResult(float damage, Defender defender, String who) {
+  public void attackResults(float damage, Defender defender, String who) {
     if(damage > 0) {
       System.out.printf(GREEN + "%s %s HITS for %.0f damage!%n",
         who, defender.getArchetype(), damage);
@@ -87,7 +87,48 @@ public class Ink {
     else {
       System.out.printf(RED + "%n%s %s MISSES!%n%n" + RESET, who, defender.getArchetype());
     } 
-  } // close attackResult()
+  } // close attackResults()
 
-  
+   public void defenderMenu() {
+    System.out.println("*************************************");
+    System.out.println("~~~~~~~ Choose Your Defender! ~~~~~~~");
+    System.out.println("~~~ 1) Petal Knight");
+    System.out.println("~~~ 2) Thorn Ranger");
+    System.out.println("~~~ 3) Moss Guardian");
+    System.out.println("~~~ 4) Dandelight");
+    System.out.println("*************************************\n");
+  } // close defenderMenu()
+
+   public void weaponMenu() {
+    System.out.println("*************************************");
+    System.out.println("~~~~~~~ Choose Your Weapon! ~~~~~~~");
+    System.out.println("~~~ 1) Moonveil (sword)");
+    System.out.println("~~~ 2) Starlit Bow");
+    System.out.println("~~~ 3) Crystal Hammer");
+    System.out.println("~~~ 4) Glowbranch (staff)");
+    System.out.println("*************************************\n");
+  } // close weaponMenu()
+
+   public void armourMenu() {
+    System.out.println("*************************************");
+    System.out.println("~~~~~~~ Choose Your Armour! ~~~~~~~");
+    System.out.println("~~~ 1) Patchwork Cloak");
+    System.out.println("~~~ 2) Mossy Mantle");
+    System.out.println("~~~ 3) Crystalplate");
+    System.out.println("*************************************\n");
+  } // close armourMenu()
+
+   public void attackMenu() {
+    System.out.println("*************************************");
+    System.out.println("~~~~~~~ Make Your Move! ~~~~~~~");
+    System.out.println("~~~ 1) Normal");
+    System.out.println("~~~ 2) Heavy");
+    // if health <== 35 switch to specialAttackMenu
+        // System.out.println("*************************************");
+        // System.out.println("~~~~~~~ Make Your Move! ~~~~~~~");
+        // System.out.println("~~~ 1) Normal");
+        // System.out.println("~~~ 2) Heavy");
+        // System.out.println("~~~ 3) Use Special Ability ");
+    System.out.println("*************************************\n");
+  } // close attackMenu()
 }
