@@ -13,6 +13,7 @@ public class PetalKnight extends Defender {
 
   public PetalKnight() {
     super("PetalKnight");
+    this.specialAbilityName = "PetalStorm";
 
     super.setHealth(super.rng.nextInt(bonusHealth) + baseHealth);
     super.setStrength(super.rng.nextInt(bonusStrength) + baseStrength);

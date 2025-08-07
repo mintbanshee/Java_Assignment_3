@@ -11,11 +11,15 @@ public abstract class Hollowborn {
   private String attack;
 
   protected Random rng = new Random();
+  protected String hollowbornAttack;
 
   public Hollowborn(String archetype) {
     this.archetype = archetype;
   } // close constructor
 
+  public String getHollowbornAttack() {
+    return this.hollowbornAttack;
+  }
   public String getArchetype() {
     return this.archetype;
   }

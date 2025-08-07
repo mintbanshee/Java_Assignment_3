@@ -14,6 +14,7 @@ public class Thistlebeast extends Hollowborn {
 
   public Thistlebeast() {
     super("Thistlebeast");
+    this.hollowbornAttack = "Briarcrush";
 
     super.setHealth(super.rng.nextInt(bonusHealth) + baseHealth);
     super.setStrength(super.rng.nextInt(bonusStrength) + baseStrength);

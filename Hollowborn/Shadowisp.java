@@ -14,6 +14,7 @@ public class Shadowisp extends Hollowborn {
 
   public Shadowisp() {
     super("Shadowisp");
+    this.hollowbornAttack = "Whisperend";
 
     super.setHealth(super.rng.nextInt(bonusHealth) + baseHealth);
     super.setStrength(super.rng.nextInt(bonusStrength) + baseStrength);
@@ -26,7 +27,7 @@ public class Shadowisp extends Hollowborn {
 
     float damageTaken = 18;
 
-    // enemy attack - Whisperrend
+    // enemy attack - Whisperend
     if (rng.nextInt(100) < 80) {
       System.out.println("A sharp whisper curls around you—cold and full of menace—as Shadowisp sinks through your guard!");
       System.out.printf("You have taken %.0f damage!%n", damageTaken);
@@ -36,6 +37,6 @@ public class Shadowisp extends Hollowborn {
         System.out.println("A shadow coils toward you, but vanishes in a wisp before it can strike. Shadowisp missed.");
         return 0;
       }
-  } // close Whisperrend
+  } // close Whisperend
 
 } // close class

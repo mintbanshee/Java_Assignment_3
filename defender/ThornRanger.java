@@ -4,15 +4,16 @@ import java.util.Random;
 import hollowborn.*;
 
 public class ThornRanger extends Defender {
-  private int baseHealth = 210;
-  private int bonusHealth = 35;
-  private int baseStrength = 75;
-  private int bonusStrength = 40;
-  private int baseAccuracy = 60;
-  private int bonusAccuracy = 45;
+  private int baseHealth = 170;
+  private int bonusHealth = 25;
+  private int baseStrength = 55;
+  private int bonusStrength = 20;
+  private int baseAccuracy = 160;
+  private int bonusAccuracy = 60;
 
   public ThornRanger() {
     super("ThornRanger");
+    this.specialAbilityName = "Needlehail";
 
     super.setHealth(super.rng.nextInt(bonusHealth) + baseHealth);
     super.setStrength(super.rng.nextInt(bonusStrength) + baseStrength);

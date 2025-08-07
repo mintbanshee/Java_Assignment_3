@@ -14,6 +14,7 @@ public class Glimmoth extends Hollowborn {
 
   public Glimmoth() {
     super("Glimmoth");
+    this.hollowbornAttack = "Glimmersting";
 
     super.setHealth(super.rng.nextInt(bonusHealth) + baseHealth);
     super.setStrength(super.rng.nextInt(bonusStrength) + baseStrength);

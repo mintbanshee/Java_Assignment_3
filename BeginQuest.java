@@ -16,6 +16,7 @@ public class BeginQuest {
   private static Weapon weapon;
   private static Armour armour;
   private static Hollowborn enemy;
+  public static Environment currentEnvironment;
 
   private static boolean isPlayerTurn = true;
   private static boolean gameOver = false;
@@ -91,6 +92,20 @@ public class BeginQuest {
 } // close main
 
   //////////// Helper Methods
+  /// 
+  
+private static Environment createWeather() {
+  Random rng = new Random();
+  int roll = rng.nextInt(2);
+
+  switch (roll) {
+    case 1: return new Fog();
+    case 2: return new Sunshine();
+
+    default: return new Sunshine();
+  } // close environment switch
+} // close Environment
+
 private static void createDefender(String who, int choice) {
     switch (choice) {
       case 1: // Petal Knight
@@ -184,6 +199,11 @@ private static void gameSetup() {
   ///////////////
   /// Enemy RNG Assignment
   enemy = enemies[rng.nextInt(enemies.length)];
+
+  ///////////////
+  /// Environment
+  currentEnvironment = createWeather();
+  ink.printWeather(currentEnvironment);
 
   ///////////////
   /// Print all stats

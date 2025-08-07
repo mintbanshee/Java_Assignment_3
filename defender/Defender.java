@@ -13,13 +13,15 @@ public abstract class Defender {
 
 
   protected Random rng = new Random();
+  protected String specialAbilityName;
 
   public Defender(String archetype) {
     this.archetype = archetype;
   } // close constructor
 
-
-
+  public String getSpecialAbilityName() {
+    return this.specialAbilityName;
+  }
   public String getArchetype() {
     return this.archetype;
   }

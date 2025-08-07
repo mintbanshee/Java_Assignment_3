@@ -14,6 +14,7 @@ public class Sludgling extends Hollowborn {
 
   public Sludgling() {
     super("Sludgling");
+    this.hollowbornAttack = "Mirelash";
 
     super.setHealth(super.rng.nextInt(bonusHealth) + baseHealth);
     super.setStrength(super.rng.nextInt(bonusStrength) + baseStrength);

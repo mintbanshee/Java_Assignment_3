@@ -4,15 +4,16 @@ import java.util.Random;
 import hollowborn.*;
 
 public class MossGuardian extends Defender {
-  private int baseHealth = 210;
-  private int bonusHealth = 35;
-  private int baseStrength = 75;
-  private int bonusStrength = 40;
-  private int baseAccuracy = 60;
-  private int bonusAccuracy = 45;
+  private int baseHealth = 360;
+  private int bonusHealth = 60;
+  private int baseStrength = 115;
+  private int bonusStrength = 50;
+  private int baseAccuracy = 15;
+  private int bonusAccuracy = 15;
 
   public MossGuardian() {
     super("MossGuardian");
+    this.specialAbilityName = "Rootwall";
 
     super.setHealth(super.rng.nextInt(bonusHealth) + baseHealth);
     super.setStrength(super.rng.nextInt(bonusStrength) + baseStrength);

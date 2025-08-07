@@ -4,15 +4,16 @@ import java.util.Random;
 import hollowborn.*;
 
 public class Dandelight extends Defender {
-  private int baseHealth = 210;
-  private int bonusHealth = 35;
-  private int baseStrength = 75;
-  private int bonusStrength = 40;
-  private int baseAccuracy = 60;
-  private int bonusAccuracy = 45;
+  private int baseHealth = 150;
+  private int bonusHealth = 20;
+  private int baseStrength = 40;
+  private int bonusStrength = 25;
+  private int baseAccuracy = 100;
+  private int bonusAccuracy = 50;
 
   public Dandelight() {
     super("Dandelight");
+    this.specialAbilityName = "Sporeshift";
 
     super.setHealth(super.rng.nextInt(bonusHealth) + baseHealth);
     super.setStrength(super.rng.nextInt(bonusStrength) + baseStrength);
