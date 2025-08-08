@@ -33,8 +33,9 @@ public class BeginQuest {
   };
   
   public static void main(String[] args) {
-    ink.welcome(currentEnvironment);
     gameSetup();
+    ink.welcome(currentEnvironment);
+    
 
     /////////////////////
     /// Game Loop

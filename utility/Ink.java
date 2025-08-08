@@ -25,7 +25,7 @@ public class Ink {
   public void welcome(Environment environment) {
     System.out.println("*************************************");
     System.out.println("~~~ Welcome to Dewdrop Defenders! ~~~");
-    System.out.printf("~~~ Today's weather is" + BLUE + "%s" + RESET, environment.getType());
+    System.out.printf("~~~ Today's weather is " + BLUE + "%s%n" + RESET, environment.getType());
     System.out.println("*************************************\n");
   } // close welcome
 
@@ -37,7 +37,7 @@ public class Ink {
 
   public void printStats(Defender player, Weapon weapon, Armour armour, Hollowborn enemy) {
     System.out.println("*************************************");
-    System.out.printf("~~~ " + GREEN + "%s(%s) Stats:%n", "Player" + RESET, player.getArchetype());
+    System.out.printf("~~~ " + GREEN + "%s(%s) Stats: " + RESET + "%n", "Player", player.getArchetype());
     System.out.printf("~~~ " + CYAN + "Armour:" + RESET + " %s%n", armour.getType());
     System.out.printf("~~~ " + CYAN + "Weapon:" + RESET + " %s%n", weapon.getType());
     System.out.printf("~~~ " + CYAN + "Ability:" + RESET + " %s%n", player.getSpecialAbilityName());
@@ -45,11 +45,11 @@ public class Ink {
     System.out.printf("~~~ " + CYAN + "Strength:" + RESET + " %s%n", player.getStrength());
     System.out.printf("~~~ " + CYAN + "Accuracy:" + RESET + " %s%n", player.getAccuracy());
     System.out.println("*************************************\n");
-    System.out.printf("~~~ " + RED + "%s(%s) Stats:%n", "Enemy" + RESET, enemy.getArchetype());
+    System.out.printf("~~~ " + RED + "%s(%s) Stats: " + RESET + "%n", "Enemy", enemy.getArchetype());
     System.out.printf("~~~ " + YELLOW + "Attack:" + RESET + " %s%n", enemy.getHollowbornAttack());
-    System.out.printf("~~~ " + YELLOW + "Health:" + RESET + " %s%n", player.getHealth());
-    System.out.printf("~~~ " + YELLOW + "Strength:" + RESET + " %s%n", player.getStrength());
-    System.out.printf("~~~ " + YELLOW + "Accuracy:" + RESET + " %s%n", player.getAccuracy());
+    System.out.printf("~~~ " + YELLOW + "Health:" + RESET + " %s%n", enemy.getHealth());
+    System.out.printf("~~~ " + YELLOW + "Strength:" + RESET + " %s%n", enemy.getStrength());
+    System.out.printf("~~~ " + YELLOW + "Accuracy:" + RESET + " %s%n", enemy.getAccuracy());
     System.out.println("*************************************\n");
   } // close printStats()
 
@@ -80,19 +80,19 @@ public class Ink {
 
   public void attackResults(float damage, Defender defender, String who) {
     if(damage > 0) {
-      System.out.printf(GREEN + "%s %s HITS for %.0f damage!%n",
-        who, defender.getArchetype(), damage);
+      System.out.printf(GREEN + "%n%s %s HITS for %.0f damage!%n",
+        who, enemy.getArchetype(), damage);
       System.out.printf("%.0f HP lost%n", damage);
-      System.out.printf("%d HP remaining%n" + RESET, defender.getHealth());
+      System.out.printf("%s has %d HP remaining%n" + RESET, defender.getArchetype(), defender.getHealth());
     }
     else {
       System.out.printf(GREEN + "%n%s %s MISSES!%n%n" + RESET, who, defender.getArchetype());
     } 
-  } // close attackResults()
+  } // close ENEMY attackResults()
 
     public void attackResults(float damage, Hollowborn enemy, String who) {
     if(damage > 0) {
-      System.out.printf(RED + "%s %s HITS for %.0f damage!%n",
+      System.out.printf(RED + "%n%s %s HITS for %.0f damage!%n",
         who, enemy.getArchetype(), damage);
       System.out.printf("%.0f HP lost%n", damage);
       System.out.printf("%d HP remaining%n" + RESET, enemy.getHealth());
@@ -100,7 +100,7 @@ public class Ink {
     else {
       System.out.printf(RED + "%n%s %s MISSES!%n%n" + RESET, who, enemy.getArchetype());
     } 
-  } // close attackResults()
+  } // close PLAYER attackResults()
 
    public void defenderMenu() {
     System.out.println("*************************************");
