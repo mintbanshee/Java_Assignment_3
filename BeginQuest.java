@@ -33,7 +33,7 @@ public class BeginQuest {
   };
   
   public static void main(String[] args) {
-    ink.welcome();
+    ink.welcome(currentEnvironment);
     gameSetup();
 
     /////////////////////
@@ -42,7 +42,7 @@ public class BeginQuest {
       if(isPlayerTurn) {
         int attackType;
         if(!usedSpecial && player.getHealth() <= 35) {
-          ink.specialAttackMenu();
+          ink.attackMenu(player);
           attackType = validator.validateAttackChoice(3);
 
           if(attackType == 3) {
@@ -53,7 +53,7 @@ public class BeginQuest {
           }
         }
         else {
-        ink.attackMenu();
+        ink.attackMenu(player);
         attackType = validator.validateAttackChoice(2);
         }
 
@@ -203,7 +203,6 @@ private static void gameSetup() {
   ///////////////
   /// Environment
   currentEnvironment = createWeather();
-  ink.printWeather(currentEnvironment);
 
   ///////////////
   /// Print all stats

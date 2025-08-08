@@ -22,9 +22,10 @@ public class Ink {
 
   public Ink() {} 
 
-  public void welcome() {
+  public void welcome(Environment environment) {
     System.out.println("*************************************");
     System.out.println("~~~ Welcome to Dewdrop Defenders! ~~~");
+    System.out.printf("~~~ Today's weather is" + BLUE + "%s" + RESET, environment.getType());
     System.out.println("*************************************\n");
   } // close welcome
 
@@ -36,19 +37,19 @@ public class Ink {
 
   public void printStats(Defender player, Weapon weapon, Armour armour, Hollowborn enemy) {
     System.out.println("*************************************");
-    System.out.printf("~~~" + GREEN + "%s(%s) Stats:%n", "Player" + RESET, player.getArchetype());
-    System.out.printf("~~~" + CYAN + "Armour:" + RESET + " %s%n", armour.getType());
-    System.out.printf("~~~" + CYAN + "Weapon:" + RESET + " %s%n", weapon.getType());
-    System.out.printf("~~~" + CYAN + "Ability:" + RESET + " %s%n", player.getSpecialAbilityName());
-    System.out.printf("~~~" + CYAN + "Health:" + RESET + " %s%n", player.getHealth());
-    System.out.printf("~~~" + CYAN + "Strength:" + RESET + " %s%n", player.getStrength());
-    System.out.printf("~~~" + CYAN + "Accuracy:" + RESET + " %s%n", player.getAccuracy());
+    System.out.printf("~~~ " + GREEN + "%s(%s) Stats:%n", "Player" + RESET, player.getArchetype());
+    System.out.printf("~~~ " + CYAN + "Armour:" + RESET + " %s%n", armour.getType());
+    System.out.printf("~~~ " + CYAN + "Weapon:" + RESET + " %s%n", weapon.getType());
+    System.out.printf("~~~ " + CYAN + "Ability:" + RESET + " %s%n", player.getSpecialAbilityName());
+    System.out.printf("~~~ " + CYAN + "Health:" + RESET + " %s%n", player.getHealth());
+    System.out.printf("~~~ " + CYAN + "Strength:" + RESET + " %s%n", player.getStrength());
+    System.out.printf("~~~ " + CYAN + "Accuracy:" + RESET + " %s%n", player.getAccuracy());
     System.out.println("*************************************\n");
-    System.out.printf("~~~" + RED + "%s(%s) Stats:%n", "Enemy" + RESET, enemy.getArchetype());
-    System.out.printf("~~~" + YELLOW + "Attack:" + RESET + " %s%n", enemy.getHollowbornAttack());
-    System.out.printf("~~~" + YELLOW + "Health:" + RESET + " %s%n", player.getHealth());
-    System.out.printf("~~~" + YELLOW + "Strength:" + RESET + " %s%n", player.getStrength());
-    System.out.printf("~~~" + YELLOW + "Accuracy:" + RESET + " %s%n", player.getAccuracy());
+    System.out.printf("~~~ " + RED + "%s(%s) Stats:%n", "Enemy" + RESET, enemy.getArchetype());
+    System.out.printf("~~~ " + YELLOW + "Attack:" + RESET + " %s%n", enemy.getHollowbornAttack());
+    System.out.printf("~~~ " + YELLOW + "Health:" + RESET + " %s%n", player.getHealth());
+    System.out.printf("~~~ " + YELLOW + "Strength:" + RESET + " %s%n", player.getStrength());
+    System.out.printf("~~~ " + YELLOW + "Accuracy:" + RESET + " %s%n", player.getAccuracy());
     System.out.println("*************************************\n");
   } // close printStats()
 
@@ -85,7 +86,19 @@ public class Ink {
       System.out.printf("%d HP remaining%n" + RESET, defender.getHealth());
     }
     else {
-      System.out.printf(RED + "%n%s %s MISSES!%n%n" + RESET, who, defender.getArchetype());
+      System.out.printf(GREEN + "%n%s %s MISSES!%n%n" + RESET, who, defender.getArchetype());
+    } 
+  } // close attackResults()
+
+    public void attackResults(float damage, Hollowborn enemy, String who) {
+    if(damage > 0) {
+      System.out.printf(RED + "%s %s HITS for %.0f damage!%n",
+        who, enemy.getArchetype(), damage);
+      System.out.printf("%.0f HP lost%n", damage);
+      System.out.printf("%d HP remaining%n" + RESET, enemy.getHealth());
+    }
+    else {
+      System.out.printf(RED + "%n%s %s MISSES!%n%n" + RESET, who, enemy.getArchetype());
     } 
   } // close attackResults()
 
@@ -118,17 +131,15 @@ public class Ink {
     System.out.println("*************************************\n");
   } // close armourMenu()
 
-   public void attackMenu() {
+   public void attackMenu(Defender player) {
     System.out.println("*************************************");
     System.out.println("~~~~~~~ Make Your Move! ~~~~~~~");
     System.out.println("~~~ 1) Normal");
     System.out.println("~~~ 2) Heavy");
-    // if health <== 35 switch to specialAttackMenu
-        // System.out.println("*************************************");
-        // System.out.println("~~~~~~~ Make Your Move! ~~~~~~~");
-        // System.out.println("~~~ 1) Normal");
-        // System.out.println("~~~ 2) Heavy");
-        // System.out.println("~~~ 3) Use Special Ability ");
+      if(player.getHealth() <= 35) {
+        System.out.println("~~~ 3) Special Ability");
+      }
     System.out.println("*************************************\n");
   } // close attackMenu()
+
 }
