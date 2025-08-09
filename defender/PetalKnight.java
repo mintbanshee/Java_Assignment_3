@@ -2,6 +2,7 @@ package defender;
 
 import java.util.Random;
 import hollowborn.*;
+import utility.Ink;
 
 public class PetalKnight extends Defender {
   private int baseHealth = 210;
@@ -29,8 +30,9 @@ public class PetalKnight extends Defender {
 
     // roll to use special ability
     if (rng.nextInt(100) < 70) {
-      System.out.println("With a whirl of petals, you strike twice with elegance and fury.");
       enemy.reduceHealth(damageTaken);
+      Ink ink = new Ink();
+      ink.petalSpecial();
     }  
       else {
         System.out.println("The petals flutter and fall slowly to the ground, your strike missed.");

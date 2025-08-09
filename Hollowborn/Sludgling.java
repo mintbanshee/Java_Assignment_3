@@ -29,12 +29,12 @@ public class Sludgling extends Hollowborn {
 
     // enemy attack - Mirelash
     if (rng.nextInt(100) < 70) {
-      System.out.println("A whipping tendril of muck lashes out, flinging bile and decay in its wake!");
+      System.out.println("\nA whipping tendril of muck lashes out, flinging bile and decay in its wake!");
       System.out.printf("You have taken %.0f damage!%n", damageTaken);
       return damageTaken;
     }  
       else {
-        System.out.println("Tendrils of muck start to flail and fall to the ground. Your foe's attack failed.");
+        System.out.println("\nTendrils of muck start to flail and fall to the ground. Your foe's attack failed.");
         return 0;
       }
   } // close Mirelash

@@ -2,6 +2,7 @@ package defender;
 
 import java.util.Random;
 import hollowborn.*;
+import utility.*;
 
 public class Dandelight extends Defender {
   private int baseHealth = 150;
@@ -23,12 +24,13 @@ public class Dandelight extends Defender {
   @Override
   public void useSpecialAbility(Hollowborn enemy, Random rng) {
     // TODO Auto-generated method stub
-    System.out.println("Glowing spores drift through the air as you call upon Sporeshift,");
 
     float damageTaken = 30;
     int healAmount = 20;
 
-      System.out.println("Some of the spores gently settle on your skin restoring your health while the rest find their mark and sting your foe!");
+      Ink ink = new Ink();
+      ink.dandelightSpecial();
+
       enemy.reduceHealth(damageTaken);
       this.heal(healAmount);
       System.out.printf("You have recovered %d health!%n", healAmount);

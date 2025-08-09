@@ -29,12 +29,12 @@ public class Glimmoth extends Hollowborn {
 
     // enemy attack - Glimmersting
     if (rng.nextInt(100) < 85) {
-      System.out.println("Glimmoth bursts in a radiant flare, dazzling your senses with eerie brilliance!");
+      System.out.println("\nGlimmoth bursts in a radiant flare, dazzling your senses with eerie brilliance!");
       System.out.printf("You have taken %.0f damage!%n", damageTaken);
       return damageTaken;
     }  
       else {
-        System.out.println("A shimmer flickers weakly before fading into the mist. Your foe's attack missed.");
+        System.out.println("\nA shimmer flickers weakly before fading into the mist. Your foe's attack missed.");
         return 0;
       }
   } // close Glimmersting

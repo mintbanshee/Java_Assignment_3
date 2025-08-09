@@ -2,6 +2,7 @@ package defender;
 
 import java.util.Random;
 import hollowborn.*;
+import utility.Ink;
 
 public class MossGuardian extends Defender {
   private int baseHealth = 360;
@@ -23,11 +24,12 @@ public class MossGuardian extends Defender {
   @Override
   public void useSpecialAbility(Hollowborn enemy, Random rng) {
     // TODO Auto-generated method stub
-    System.out.println("You slam your Rootspike into the ground, calling Rootwall to protect you!");
 
     int healAmount = 25;
 
-    System.out.println("The ground rumbles as roots surge up from the earth to encase you and patch some of your wounds.");
+      Ink ink = new Ink();
+      ink.mossSpecial();
+
       this.heal(healAmount);
     System.out.printf("You have recovered %d health!%n", healAmount);
     }  // close Rootwall

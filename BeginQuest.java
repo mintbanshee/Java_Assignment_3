@@ -24,8 +24,6 @@ public class BeginQuest {
   private static int maxDefenders = 4;
   private static int maxWeapons = 4;
   private static int maxArmours = 3;
-  private static int maxHollowborn = 4;
-  private static int maxAttackOptions = 3;
   private static boolean usedSpecial = false;
 
   private static Hollowborn[] enemies = {
@@ -42,29 +40,26 @@ public class BeginQuest {
     while(!gameOver) {
       if(isPlayerTurn) {
         int attackType;
-        if(!usedSpecial && player.getHealth() <= 35) {
-          ink.attackMenu(player);
-          attackType = validator.validateAttackChoice(3);
+        boolean canUseSpecial = !usedSpecial && player.getHealth() <= 35;
 
-          if(attackType == 3) {
+          ink.attackMenu(player, canUseSpecial);
+          int max = canUseSpecial ? 3 : 2;
+          attackType = validator.validateAttackChoice(max);
+
+          if(canUseSpecial && attackType == 3) {
             player.useSpecialAbility(enemy, rng);
             usedSpecial = true;
             isPlayerTurn = false;
             continue;
           }
-        }
-        else {
-        ink.attackMenu(player);
-        attackType = validator.validateAttackChoice(2);
-        }
-
-        damageTaken = weapon.strike(
-          attackType, player.getStrength(), player.getAccuracy(), armour.getArmourAccuracyCost());
-
+          else {
+            damageTaken = weapon.strike(
+              attackType, player.getStrength(), player.getAccuracy(), armour.getArmourAccuracyCost());
+          }
         if(damageTaken > 0) {
           enemy.reduceHealth(damageTaken);
           if(enemy.getHealth() <= 0) {
-            System.out.println("Player Wins!!");
+            ink.playerWin();
             gameOver = true;
           } 
         } 
@@ -77,7 +72,7 @@ public class BeginQuest {
     if(damageTaken > 0) {
       player.reduceHealth(damageTaken);
       if(player.getHealth() <= 0) {
-        System.out.println("Enemy wins!");
+        ink.enemyWin();
         gameOver = true;
       }
     } 

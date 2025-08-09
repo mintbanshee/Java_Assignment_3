@@ -29,14 +29,58 @@ public class Ink {
     System.out.println("*************************************\n");
   } // close welcome
 
-   public void goodbye() {
-    System.out.println("*************************************");
+  public void goodbye() {
+    System.out.println("\n*************************************");
     System.out.println("~~~~~~ Thank you for playing! ~~~~~~");
     System.out.println("*************************************\n");
   } // close goodbye
 
+
+  public void dandelightSpecial() {
+    System.out.println(PURPLE + "\n*************************************\n" + RESET);
+    System.out.println(PURPLE + "Dandelight calls upon Sporeshift!" + RESET);
+    System.out.println(PURPLE + "Glowing spores drift through the air, gently settle on your skin restoring your health" + RESET);
+    System.out.println(PURPLE + "while the rest find their mark and sting your foe!\n" + RESET);
+    System.out.println(PURPLE + "*************************************\n" + RESET);
+  }
+   public void mossSpecial() {
+    System.out.println(PURPLE + "\n*************************************\n" + RESET);
+    System.out.println(PURPLE + "Moss Guardian slams their rootspike into the ground, summoning Rootwall!" + RESET);
+    System.out.println(PURPLE + "The ground rumbles as roots surge up from the earth to encase you and patch some of your wounds." + RESET);
+    System.out.println(PURPLE + "while the rest find their mark and sting your foe!\n" + RESET);
+    System.out.println(PURPLE + "*************************************\n" + RESET);
+  }
+   public void petalSpecial() {
+    System.out.println(PURPLE + "\n*************************************\n" + RESET);
+    System.out.println(PURPLE + "Petal Knight whirls in to a Petalstorm, petals rushing all around the battle!" + RESET);
+    System.out.println(PURPLE + "Surrounded by petals, you strike twice with elegance and fury.\n" + RESET);
+    System.out.println(PURPLE + "*************************************\n" + RESET);
+  }
+   public void rangerSpecial() {
+    System.out.println(PURPLE + "\n*************************************\n" + RESET);
+    System.out.println(PURPLE + "Thorn Ranger summons Needlehail - thunder rumbling as misty green clouds begin to form overhead!" + RESET);
+    System.out.println(PURPLE + "You unleash a thorny hailstorm, peppering the enemy from all angles!\n" + RESET);
+    System.out.println(PURPLE + "*************************************\n" + RESET);
+  } // special abilities close
+
+    public void playerWin() {
+    System.out.println(GREEN + "\n*************************************" + RESET);
+     System.out.println(GREEN + "~~~~~~ !! Congratulations! You have defended the valley !! ~~~~~~" + RESET);
+    System.out.println(GREEN + "~~~~~~ !! Player Wins !! ~~~~~~" + RESET);
+    System.out.println(GREEN + "*************************************\n" + RESET);
+  } // close playerwin
+    public void enemyWin() {
+    System.out.println(RED + "\n*************************************" + RESET);
+    System.out.println(RED + "~~~~~~ !! Oh no, the Hollowborn have taken the valley !! ~~~~~~" + RESET);
+    System.out.println(RED + "~~~~~~ !! The Hollowborn Wins !! ~~~~~~" + RESET);
+    System.out.println(RED + "*************************************\n" + RESET);
+  } // close enemywin
+
+
+
+
   public void printStats(Defender player, Weapon weapon, Armour armour, Hollowborn enemy) {
-    System.out.println("*************************************");
+    System.out.println("\n*************************************");
     System.out.printf("~~~ " + GREEN + "%s(%s) Stats: " + RESET + "%n", "Player", player.getArchetype());
     System.out.printf("~~~ " + CYAN + "Armour:" + RESET + " %s%n", armour.getType());
     System.out.printf("~~~ " + CYAN + "Weapon:" + RESET + " %s%n", weapon.getType());
@@ -44,7 +88,7 @@ public class Ink {
     System.out.printf("~~~ " + CYAN + "Health:" + RESET + " %s%n", player.getHealth());
     System.out.printf("~~~ " + CYAN + "Strength:" + RESET + " %s%n", player.getStrength());
     System.out.printf("~~~ " + CYAN + "Accuracy:" + RESET + " %s%n", player.getAccuracy());
-    System.out.println("*************************************\n");
+    System.out.println("*************************************");
     System.out.printf("~~~ " + RED + "%s(%s) Stats: " + RESET + "%n", "Enemy", enemy.getArchetype());
     System.out.printf("~~~ " + YELLOW + "Attack:" + RESET + " %s%n", enemy.getHollowbornAttack());
     System.out.printf("~~~ " + YELLOW + "Health:" + RESET + " %s%n", enemy.getHealth());
@@ -78,32 +122,32 @@ public class Ink {
     System.out.println("*************************************\n");
   }
 
-  public void attackResults(float damage, Defender defender, String who) {
+// player attacking enemy
+  public void attackResults(float damage, Hollowborn enemy, String who) {
     if(damage > 0) {
-      System.out.printf(GREEN + "%n%s %s HITS for %.0f damage!%n",
+      System.out.printf(GREEN + "%n%s HITS %s for %.0f damage!%n" + RESET,
         who, enemy.getArchetype(), damage);
-      System.out.printf("%.0f HP lost%n", damage);
-      System.out.printf("%s has %d HP remaining%n" + RESET, defender.getArchetype(), defender.getHealth());
+      System.out.printf(RED + "%s has %d HP remaining%n" + RESET, enemy.getArchetype(), enemy.getHealth());
     }
     else {
-      System.out.printf(GREEN + "%n%s %s MISSES!%n%n" + RESET, who, defender.getArchetype());
+      System.out.printf(GREEN + "%n%s MISSES %s!%n%n" + RESET, who, enemy.getArchetype());
     } 
-  } // close ENEMY attackResults()
+  } // close attackResults()
 
-    public void attackResults(float damage, Hollowborn enemy, String who) {
+  // enemy attacking player
+    public void attackResults(float damage, Defender defender, String who) {
     if(damage > 0) {
-      System.out.printf(RED + "%n%s %s HITS for %.0f damage!%n",
-        who, enemy.getArchetype(), damage);
-      System.out.printf("%.0f HP lost%n", damage);
-      System.out.printf("%d HP remaining%n" + RESET, enemy.getHealth());
+      System.out.printf(RED + "%n%s HITS %s for %.0f damage!%n" + RESET,
+        who, defender.getArchetype(), damage);
+      System.out.printf(GREEN + "%s has %d HP remaining%n" + RESET, defender.getArchetype(), defender.getHealth());
     }
     else {
-      System.out.printf(RED + "%n%s %s MISSES!%n%n" + RESET, who, enemy.getArchetype());
+      System.out.printf(RED + "%n%s MISSES %s!%n%n" + RESET, who, defender.getArchetype());
     } 
-  } // close PLAYER attackResults()
+  } // close attackResults()
 
    public void defenderMenu() {
-    System.out.println("*************************************");
+    System.out.println("\n*************************************");
     System.out.println("~~~~~~~ Choose Your Defender! ~~~~~~~");
     System.out.println("~~~ 1) Petal Knight");
     System.out.println("~~~ 2) Thorn Ranger");
@@ -113,7 +157,7 @@ public class Ink {
   } // close defenderMenu()
 
    public void weaponMenu() {
-    System.out.println("*************************************");
+    System.out.println("\n*************************************");
     System.out.println("~~~~~~~ Choose Your Weapon! ~~~~~~~");
     System.out.println("~~~ 1) Moonveil (sword)");
     System.out.println("~~~ 2) Starlit Bow");
@@ -123,7 +167,7 @@ public class Ink {
   } // close weaponMenu()
 
    public void armourMenu() {
-    System.out.println("*************************************");
+    System.out.println("\n*************************************");
     System.out.println("~~~~~~~ Choose Your Armour! ~~~~~~~");
     System.out.println("~~~ 1) Patchwork Cloak");
     System.out.println("~~~ 2) Mossy Mantle");
@@ -131,12 +175,12 @@ public class Ink {
     System.out.println("*************************************\n");
   } // close armourMenu()
 
-   public void attackMenu(Defender player) {
-    System.out.println("*************************************");
+   public void attackMenu(Defender player, boolean canUseSpecial) {
+    System.out.println("\n*************************************");
     System.out.println("~~~~~~~ Make Your Move! ~~~~~~~");
     System.out.println("~~~ 1) Normal");
     System.out.println("~~~ 2) Heavy");
-      if(player.getHealth() <= 35) {
+      if(canUseSpecial) {
         System.out.println("~~~ 3) Special Ability");
       }
     System.out.println("*************************************\n");

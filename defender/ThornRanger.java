@@ -2,6 +2,7 @@ package defender;
 
 import java.util.Random;
 import hollowborn.*;
+import utility.Ink;
 
 public class ThornRanger extends Defender {
   private int baseHealth = 170;
@@ -23,13 +24,14 @@ public class ThornRanger extends Defender {
   @Override
   public void useSpecialAbility(Hollowborn enemy, Random rng) {
     // TODO Auto-generated method stub
-    System.out.println("You summon Needlehail - thunder rumbles as misty green clouds begin to form overhead!");
 
     float damageTaken = 22;
 
     // roll to use special ability
     if (rng.nextInt(100) < 85) {
-      System.out.println("You unleash a thorny hailstorm, peppering the enemy from all angles!");
+      Ink ink = new Ink();
+      ink.rangerSpecial();
+
       enemy.reduceHealth(damageTaken);
     }  
       else {
