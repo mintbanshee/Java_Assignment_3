@@ -25,13 +25,13 @@ public class Ink {
   public void welcome(Environment environment) {
     System.out.println("*************************************");
     System.out.println("~~~ Welcome to Dewdrop Defenders! ~~~");
-    System.out.printf("~~~~ Today's weather is " + BLUE + "%s " + RESET + "~~~~%n" + RESET, environment.getType());
+    System.out.printf("~~~~ Today's weather is " + BLUE + "%s " + RESET + "~~~~%n", environment.getType());
       if (environment.getType().equals("Fog")) {
-        System.out.println("~~~ Effect:" + BLUE + "Accuracy reduced by 5 ~~~~" + RESET);
+        System.out.println("~~~ Effect: " + BLUE + "Accuracy reduced by 5 ~~~~" + RESET);
       }
       else if
         (environment.getType().equals("Sunshine")) {
-          System.out.println("~~ Effect:" + BLUE + "Accuracy increased by 10 ~~" + RESET);
+          System.out.println("~ Effect: " + BLUE + "Accuracy increased by 10 ~" + RESET);
       }
     System.out.println("*************************************\n");
   } // close welcome

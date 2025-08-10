@@ -53,8 +53,12 @@ public class BeginQuest {
             continue;
           }
           else {
+            int adjustedAccuracy = player.getAccuracy() - armour.getArmourAccuracyCost();
+              adjustedAccuracy += currentEnvironment.getAccuracyBoost();
+              adjustedAccuracy += currentEnvironment.getAccuracyLoss();
+
             damageTaken = weapon.strike(
-              attackType, player.getStrength(), player.getAccuracy(), armour.getArmourAccuracyCost());
+              attackType, player.getStrength(), adjustedAccuracy, armour.getArmourAccuracyCost());
           }
         if(damageTaken > 0) {
           enemy.reduceHealth(damageTaken);
