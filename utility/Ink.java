@@ -25,7 +25,14 @@ public class Ink {
   public void welcome(Environment environment) {
     System.out.println("*************************************");
     System.out.println("~~~ Welcome to Dewdrop Defenders! ~~~");
-    System.out.printf("~~~ Today's weather is " + BLUE + "%s%n" + RESET, environment.getType());
+    System.out.printf("~~~~ Today's weather is " + BLUE + "%s " + RESET + "~~~~%n" + RESET, environment.getType());
+      if (environment.getType().equals("Fog")) {
+        System.out.println("~~~ Effect:" + BLUE + "Accuracy reduced by 5 ~~~~" + RESET);
+      }
+      else if
+        (environment.getType().equals("Sunshine")) {
+          System.out.println("~~ Effect:" + BLUE + "Accuracy increased by 10 ~~" + RESET);
+      }
     System.out.println("*************************************\n");
   } // close welcome
 
@@ -37,43 +44,45 @@ public class Ink {
 
 
   public void dandelightSpecial() {
-    System.out.println(PURPLE + "\n*************************************\n" + RESET);
-    System.out.println(PURPLE + "Dandelight calls upon Sporeshift!" + RESET);
+    System.out.println(PURPLE + "\n***************************************************************************************\n" + RESET);
+    System.out.println(PURPLE + "~~~~~~~~~~~~~~~~~~~~~~~~~ Dandelight calls upon Sporeshift! ~~~~~~~~~~~~~~~~~~~~~~~~~~" + RESET);
     System.out.println(PURPLE + "Glowing spores drift through the air, gently settle on your skin restoring your health" + RESET);
-    System.out.println(PURPLE + "while the rest find their mark and sting your foe!\n" + RESET);
-    System.out.println(PURPLE + "*************************************\n" + RESET);
+    System.out.println(PURPLE + "~~~~~~~~~~~~~~~~~~ while the rest find their mark and sting your foe! ~~~~~~~~~~~~~~~~~\n" + RESET);
+    System.out.println(PURPLE + "\n***************************************************************************************\n" + RESET);
   }
    public void mossSpecial() {
-    System.out.println(PURPLE + "\n*************************************\n" + RESET);
-    System.out.println(PURPLE + "Moss Guardian slams their rootspike into the ground, summoning Rootwall!" + RESET);
-    System.out.println(PURPLE + "The ground rumbles as roots surge up from the earth to encase you and patch some of your wounds." + RESET);
-    System.out.println(PURPLE + "while the rest find their mark and sting your foe!\n" + RESET);
-    System.out.println(PURPLE + "*************************************\n" + RESET);
+    System.out.println(PURPLE + "\n************************************************************************************************\n" + RESET);
+    System.out.println(PURPLE + "~~~~~~~~~~~ Moss Guardian slams their rootspike into the ground, summoning Rootwall! ~~~~~~~~~~~" + RESET);
+    System.out.println(PURPLE + "The ground rumbles as roots surge up from the earth to encase you and patch some of your wounds" + RESET);
+    System.out.println(PURPLE + "~~~~~~~~~~~~~~~~~~~~~~ while the rest find their mark and sting your foe! ~~~~~~~~~~~~~~~~~~~~~~\n" + RESET);
+    System.out.println(PURPLE + "\n*************************************************************************************************\n" + RESET);
   }
    public void petalSpecial() {
-    System.out.println(PURPLE + "\n*************************************\n" + RESET);
+    System.out.println(PURPLE + "\n*****************************************************************************\n" + RESET);
     System.out.println(PURPLE + "Petal Knight whirls in to a Petalstorm, petals rushing all around the battle!" + RESET);
     System.out.println(PURPLE + "Surrounded by petals, you strike twice with elegance and fury.\n" + RESET);
-    System.out.println(PURPLE + "*************************************\n" + RESET);
+    System.out.println(PURPLE + "\n*****************************************************************************\n" + RESET);
   }
    public void rangerSpecial() {
-    System.out.println(PURPLE + "\n*************************************\n" + RESET);
-    System.out.println(PURPLE + "Thorn Ranger summons Needlehail - thunder rumbling as misty green clouds begin to form overhead!" + RESET);
+    System.out.println(PURPLE + "\n**********************************************************************\n" + RESET);
+    System.out.println(PURPLE + "~~~~~~~~~~~~~~~~~~~ Thorn Ranger summons Needlehail ~~~~~~~~~~~~~~~~~~" + RESET);
+    System.out.println(PURPLE + "~~~ Thunder rumbling as misty green clouds begin to form overhead! ~~~" + RESET);
     System.out.println(PURPLE + "You unleash a thorny hailstorm, peppering the enemy from all angles!\n" + RESET);
-    System.out.println(PURPLE + "*************************************\n" + RESET);
+    System.out.println(PURPLE + "********************************************************************\n" + RESET);
   } // special abilities close
 
     public void playerWin() {
-    System.out.println(GREEN + "\n*************************************" + RESET);
-     System.out.println(GREEN + "~~~~~~ !! Congratulations! You have defended the valley !! ~~~~~~" + RESET);
-    System.out.println(GREEN + "~~~~~~ !! Player Wins !! ~~~~~~" + RESET);
-    System.out.println(GREEN + "*************************************\n" + RESET);
+    System.out.println(GREEN + "\n***************************************" + RESET);
+    System.out.println(GREEN + "~~~~~~~~ !! Congratulations !! ~~~~~~~~" + RESET);
+    System.out.println(GREEN + "~~~~ You have defended the valley! ~~~~" + RESET);
+    System.out.println(GREEN + "~~~~~~~~~~ !! Player Wins !! ~~~~~~~~~~" + RESET);
+    System.out.println(GREEN + "***************************************\n" + RESET);
   } // close playerwin
     public void enemyWin() {
-    System.out.println(RED + "\n*************************************" + RESET);
-    System.out.println(RED + "~~~~~~ !! Oh no, the Hollowborn have taken the valley !! ~~~~~~" + RESET);
-    System.out.println(RED + "~~~~~~ !! The Hollowborn Wins !! ~~~~~~" + RESET);
-    System.out.println(RED + "*************************************\n" + RESET);
+    System.out.println(RED + "\n********************************************************" + RESET);
+    System.out.println(RED + "~~~~~ !! The Hollowborn have taken the valley !! ~~~~~~" + RESET);
+    System.out.println(RED + "~~~~~~~~~~~~~~ !! The Hollowborn Wins !! ~~~~~~~~~~~~~~" + RESET);
+    System.out.println(RED + "********************************************************\n" + RESET);
   } // close enemywin
 
 
